@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dhellskieee Readme</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page-wrap">
+  <header class="top">
+    <a class="brand" href="#home">dhellskieee</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#home" data-link="home">home</a>
+      <a href="#portfolio" data-link="portfolio">portfolio</a>
+      <a href="#contact" data-link="contact">contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HOME -->
+    <section class="page" data-page="home">
+      <div class="intro">
+        <p class="meta">readme.md</p>
+        <h1>Dhellskieee</h1>
+        <p class="lead">Dhellmar Feliciano Mahilum — Computer Science student. I write code, build games and websites, and learn how systems break so I can make them safer.</p>
+      </div>
+
+      <div class="body">
+        <h2>Interests</h2>
+        <ul class="tags" id="interests"></ul>
+
+        <h2>Now</h2>
+        <p class="plain">Studying, building small projects, and practicing ethical hacking in my own lab.</p>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="page" data-page="portfolio" hidden>
+      <div class="intro">
+        <p class="meta">portfolio.md</p>
+        <h1>Portfolio</h1>
+        <p class="lead">A few things I've built. These are samples for now.</p>
+      </div>
+
+      <div class="body">
+        <ol class="work" id="work"></ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="page" data-page="contact" hidden>
+      <div class="intro">
+        <p class="meta">contact.md</p>
+        <h1>Contact</h1>
+        <p class="lead">Open to collabs, internships, and project ideas.</p>
+      </div>
+
+      <div class="body">
+        <dl class="rows">
+          <div class="row"><dt>gmail</dt><dd><a href="mailto:felicianomahilum@gmail.com">felicianomahilum@gmail.com</a></dd><button type="button" data-copy="felicianomahilum@gmail.com">copy</button></div>
+          <div class="row"><dt>github</dt><dd><a href="https://github.com/dhellss" target="_blank" rel="noopener">github.com/dhellss</a></dd><button type="button" data-copy="https://github.com/dhellss">copy</button></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>malupet na hacker</span>
+    <span id="clock">Manila · --:--</span>
+  </footer>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script src="script.js"></script>
+</body>
+</html>

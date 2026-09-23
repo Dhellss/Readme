@@ -1,0 +1,74 @@
+:root{
+  color-scheme:dark;
+  --bg:#0E0E0D; --ink:#E7E5E0; --muted:#8A8780; --dim:#55534E; --line:#232220; --accent:#D98A4A;
+  --sans:"Geist", "Segoe UI", system-ui, sans-serif;
+  --mono:"Geist Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:1px solid var(--accent);outline-offset:3px}
+
+.page-wrap{width:100%;max-width:1400px;margin:0 auto;padding-inline:clamp(20px,4vw,56px);min-height:100vh;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:32px 56px}
+.brand{font:500 14px/1 var(--mono);text-decoration:none}
+.nav{display:flex;gap:20px}
+.nav a{font:400 13px/1 var(--mono);color:var(--muted);text-decoration:none;padding-block:4px;background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 1px no-repeat;transition:color .2s,background-size .3s}
+.nav a:hover{color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--ink);background-size:100% 1px}
+
+main{flex:1;display:flex;flex-direction:column;justify-content:center;padding-block:clamp(0px,3vh,32px)}
+.page{flex:none;display:grid;grid-template-columns:minmax(0,1fr);gap:0;align-content:start}
+.intro,.body{min-width:0}
+.body > :first-child{margin-top:0}
+@media (min-width:900px){
+  .page{grid-template-columns:minmax(240px,340px) minmax(0,1fr);column-gap:clamp(40px,6vw,96px);align-items:start}
+  .intro{position:sticky;top:32px}
+}
+.page.in{animation:in .45s ease both}
+@keyframes in{from{opacity:0;transform:translateY(6px)}}
+.meta{margin:0;font:400 12px/1 var(--mono);color:var(--dim)}
+h1{margin:10px 0 0;font-weight:600;font-size:clamp(26px,2.4vw,36px);letter-spacing:-.02em;line-height:1.2}
+h2{margin:40px 0 12px;font:500 12px/1 var(--mono);color:var(--muted);text-transform:lowercase}
+h2::before{content:"## ";color:var(--dim)}
+.lead{margin:14px 0 0;color:var(--muted);max-width:46ch}
+.plain{margin:0;color:var(--muted)}
+
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;max-width:820px}
+.tags li{font:400 12.5px/1 var(--mono);color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:6px 9px;transition:color .2s,border-color .2s}
+.tags li:hover{color:var(--ink);border-color:var(--dim)}
+
+.work{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.work li{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:clamp(16px,3vw,40px);align-items:baseline;padding-block:18px;border-bottom:1px solid var(--line)}
+.work .yr{font:400 12px/1 var(--mono);color:var(--dim)}
+.work h3{margin:0;font-size:15px;font-weight:500}
+.work p{margin:3px 0 0;font-size:13.5px;color:var(--muted);max-width:68ch}
+.work .stack{font:400 11.5px/1 var(--mono);color:var(--dim);text-align:right}
+.work li:hover h3{color:var(--accent)}
+
+.rows{margin:0;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:80px minmax(0,1fr) auto;gap:clamp(16px,3vw,40px);align-items:center;padding-block:16px;border-bottom:1px solid var(--line)}
+.row dt{font:400 12px/1 var(--mono);color:var(--dim)}
+.row dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.row a{text-decoration:none}
+.row a:hover{color:var(--accent)}
+.row button{font:400 11.5px/1 var(--mono);color:var(--dim)}
+.row button:hover{color:var(--ink)}
+
+.foot{display:flex;justify-content:space-between;gap:16px;padding-block:56px 32px;font:400 12px/1 var(--mono);color:var(--dim)}
+.toast{position:fixed;left:50%;bottom:24px;translate:-50% 0;background:var(--ink);color:var(--bg);font:500 12px/1 var(--mono);padding:9px 14px;border-radius:4px}
+
+@media (max-width:899px){
+  .body > :first-child{margin-top:40px}
+}
+@media (max-width:600px){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .top{padding-block:24px 36px}
+  .nav{gap:14px}
+  .work li{grid-template-columns:1fr;gap:4px}
+  .work .stack{text-align:left}
+  .row{grid-template-columns:52px minmax(0,1fr) auto;gap:10px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
