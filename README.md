@@ -14,5 +14,3 @@ The site reads like a README file — `readme.md`, `portfolio.md`, `contact.md`.
      ![Preview ng website](./asset/image_2.png)
 
      ![Preview ng website](./asset/image_3.png)
-
-     ![Preview ng website](./asset/image_4.png)
